@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 
@@ -11,16 +10,15 @@ const Sidebar = () => {
       .then((data) => setQuestions(data));
   }, []);
 
-  console.log(questions);
+  // console.log(questions);
   return (
     <div>
-      <h5 className="fw-bold pb-2">All Category</h5>
-
       <ListGroup as="ol" numbered>
         {questions.map((question) => (
           <ListGroup.Item
             as="li"
             className="d-flex justify-content-start align-items-start"
+            key={question.id}
           >
             <div className="fw-normal text-decoration-none ps-2">
               <Link
