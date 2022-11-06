@@ -9,7 +9,7 @@ const Main = () => {
   return (
     <div>
       <Header></Header>
-      <Row style={{ height: "90vh" }} className="container mx-auto pt-5">
+      <Row className="container mx-auto pt-5">
         <Col className="pe-3" lg="4">
           <Sidebar></Sidebar>
         </Col>
@@ -17,6 +17,7 @@ const Main = () => {
           <Outlet></Outlet>
         </Col>
       </Row>
+
       <Footer></Footer>
     </div>
   );

@@ -61,7 +61,9 @@ const Header = () => {
                     id="collasible-nav-dropdown"
                   >
                     <NavDropdown.Item>
-                      <Link to="/profile">{user?.displayName}</Link>
+                      <Link className="nav-link" to="/profile">
+                        {user?.displayName}
+                      </Link>
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item onClick={handleSignOut}>
