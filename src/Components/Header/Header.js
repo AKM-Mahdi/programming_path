@@ -33,7 +33,7 @@ const Header = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
+            <Nav className="justify-content-end align-items-center flex-grow-1 pe-3">
               <Link className="nav-link text-light  me-3" to="/">
                 Home
               </Link>
@@ -62,7 +62,7 @@ const Header = () => {
                   >
                     <NavDropdown.Item>
                       <Link className="nav-link" to="/profile">
-                        {user?.displayName}
+                        Profile
                       </Link>
                     </NavDropdown.Item>
                     <NavDropdown.Divider />

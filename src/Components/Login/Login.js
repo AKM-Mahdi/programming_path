@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
@@ -10,10 +11,16 @@ import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const { loginWithEmailAndPassword, setLoading } = useContext(AuthContext);
+  const { loginWithEmailAndPassword, setLoading,signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+
+    // sign in with google popups
+    const provider = new GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+      signInWithGoogle(provider);
+    };
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -70,6 +77,14 @@ const Login = () => {
           Submit
         </Button>
       </Form>
+      <div className="thirdPartyLOgin mt-5 border p-4 rounded d-flex  justify-content-between">
+        <button className="btn btn-secondary" onClick={handleGoogleSignIn}>
+          SIgn in With Google
+        </button>
+        <button className="btn btn-secondary">SIgn in With GitHub</button>
+        <button className="btn btn-secondary">SIgn in With Facebook</button>
+        <button className="btn btn-secondary">SIgn in With Twitter</button>
+      </div>
     </div>
   );
 };
