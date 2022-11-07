@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const [questions, setQuestions] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/lessons")
+    fetch("https://programming-path-server-two.vercel.app/lessons")
       .then((res) => res.json())
       .then((data) => setQuestions(data));
   }, []);
