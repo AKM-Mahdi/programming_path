@@ -4,6 +4,7 @@ import Contact from "../Components/Contact/Contact";
 import Home from "../Components/Home/Home";
 import Lesson from "../Components/Lesson/Lesson";
 import Login from "../Components/Login/Login";
+import Profile from "../Components/Profile/Profile";
 import Register from "../Components/Register/Register";
 import Main from "../Layout/Main";
 import PrivateRoutes from "./PrivateRoutes";
@@ -45,6 +46,14 @@ export const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoutes>
+            <Profile></Profile>
+          </PrivateRoutes>
+        ),
       },
     ],
   },
