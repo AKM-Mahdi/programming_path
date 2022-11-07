@@ -27,7 +27,7 @@ export const routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/lessons/${params.id}`),
+          fetch(`https://programming-path-server-two.vercel.app/lessons/${params.id}`),
       },
       {
         path: "/blog",
